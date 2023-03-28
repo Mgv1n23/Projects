@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.paint.*;
+import javafx.scene.shape.Circle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -180,5 +181,13 @@ public class GameBlock extends Canvas {
     public void bind(ObservableValue<? extends Number> input) {
         value.bind(input);
     }
+    private Circle roundThing;
+    public void makeCircle() {
+        roundThing = new Circle(width/2,height/2,width/2.13);
+        roundThing.setFill(Color.gray(1, 0.7));
 
+    }
+    public Circle getCircle(){
+        return roundThing;
+    }
 }
